@@ -1,0 +1,16 @@
+<?php
+function conn_db(){
+$servername = "http://jvckst.com:2031/pma/";
+
+$username = "jvckst_modx";
+
+$password = "automodx";
+
+
+$dbname = "jvckst_PPR";
+// Create connection
+
+$conn = new mysqli($servername, $username, $password,$dbname);
+return $conn;
+}
+?>
