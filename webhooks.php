@@ -99,10 +99,8 @@ echo "OK";
     else if($message == "เมนู"){
 	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "เมนูอาหาร 20-25 พค.ตามนี้นะครับ\n";
-	$arrayPostData['messages'][0]['text'] = "จ-Curry ไก่ (*** Line Block ****)\n";
-	$arrayPostData['messages'][0]['text'] = "อ-ลาบหมู \nพ-ต้มข่าไก่\nพฤ-เต้าหู้ทรงเครื่อง\nศ-ปลาดุกทอดกรอบผัดเผ๊ด\nส-ขนมเบื้องญวนห่อไข่\n";
-	$arrayPostData['messages'][0]['text'] = "ขอบคุณครับ ";
+        $arrayPostData['messages'][0]['text'] = "เมนูอาหาร 20-25 พค.ตามนี้นะครับ\nจ-Curry ไก่ (*** Line Block ****)\nอ-ลาบหมู \nพ-ต้มข่าไก่\nพฤ-เต้าหู้ทรงเครื่อง\nศ-ปลาดุกทอดกรอบผัดเผ๊ด\nส-ขนมเบื้องญวนห่อไข่\nขอบคุณครับ ";
+
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Sticker"
