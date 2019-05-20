@@ -52,7 +52,7 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
                         $mg ='This is your Line ID:';
 			echo $mg . $result . "\r\n";
-			pushMsg($arrayHeader,$arrayPostData)
+			#pushMsg($arrayHeader,$arrayPostData)
 			
 		}
 	}
