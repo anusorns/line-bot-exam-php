@@ -99,7 +99,7 @@ echo "OK";
     else if($message == "เมนู"){
 	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "เมนูอาหาร 20-25 พค.ตามนี้นะครับ\nจ-Curry ไก่ (*** Line Block ****)\nอ-ลาบหมู \nพ-ต้มข่าไก่\nพฤ-เต้าหู้ทรงเครื่อง\nศ-ปลาดุกทอดกรอบผัดเผ๊ด\nส-ขนมเบื้องญวนห่อไข่\nขอบคุณครับ ";
+        $arrayPostData['messages'][0]['text'] = "เมนูอาหาร 20-25 พค.ตามนี้นะครับ\nจ-Curry ไก่ ";
 
         replyMsg($arrayHeader,$arrayPostData);
     }
