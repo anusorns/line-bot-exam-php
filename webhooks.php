@@ -10,15 +10,16 @@
     
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
-    $id = $arrayJson['events'][0]['source']['userId'];
+    $userId = $arrayJson['events'][0]['source']['userId'];
 curl -X GET \
--H 'Authorization: Bearer {$accessToken}' \
-https://api.line.me/v2/bot/profile/{$id}
+-H 'Authorization: Bearer {acI+Y9TOweOJVl+uPFFxr9sIOzN2A2khMx+Sz4OkSZqWCea1XDJ6fjjPh+9FihUi+VdsRSSXUqvjRsAB4C61QrCPFS09k2k0s2R9JH8vi1P5dkwP4Xrx/zkJ/EvRWCaK3OaV1gwrtkesqiYqEUmf4wdB04t89/1O/w1cDnyilFU=}' \
+https://api.line.me/v2/bot/profile/{userId}
+
 #ตัวอย่าง Message Type "Text"
     if($message == "สวัสดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา\n" . $id;
+        $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา\n" . $userId;
         replyMsg($arrayHeader,$arrayPostData);
     }
     else if($message == "เมนู"){
