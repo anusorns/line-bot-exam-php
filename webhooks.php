@@ -11,10 +11,7 @@
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
     $userId = $arrayJson['events'][0]['source']['userId'];
-curl -X GET \
--H 'Authorization: Bearer {acI+Y9TOweOJVl+uPFFxr9sIOzN2A2khMx+Sz4OkSZqWCea1XDJ6fjjPh+9FihUi+VdsRSSXUqvjRsAB4C61QrCPFS09k2k0s2R9JH8vi1P5dkwP4Xrx/zkJ/EvRWCaK3OaV1gwrtkesqiYqEUmf4wdB04t89/1O/w1cDnyilFU=}' \
-#https://api.line.me/v2/bot/profile/{userId}
-GET https://api.line.me/v2/bot/profile/{U6dddcde3bfefff061ae9f6402bfc45b5}
+
 
 #ตัวอย่าง Message Type "Text"
     if($message == "สวัสดี"){
@@ -29,7 +26,7 @@ GET https://api.line.me/v2/bot/profile/{U6dddcde3bfefff061ae9f6402bfc45b5}
         $arrayPostData['messages'][0]['text'] = "เมนูอาหาร 20-25 พค.ตามนี้นะครับ\n
 จ-Curryไก่\n
 อ-ลาบหมู\n
-พ-ต้มข่าไก่\n
+พ-ข้าวไก่นึ่ง\n
 พฤ-เต้าหู้ทรงเครื่อง\n
 ศ-ปลาดุกทอดกรอบผัดพริกแกง\n
 ส-ขนมเบื้องญวนห่อไข่\n
