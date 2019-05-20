@@ -14,6 +14,12 @@
     if($message == "สวัสดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สวัสดี\nจ้าาา";
+        replyMsg($arrayHeader,$arrayPostData);
+    }
+    else if($message == "เมนู"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
         replyMsg($arrayHeader,$arrayPostData);
     }
