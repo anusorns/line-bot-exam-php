@@ -1,14 +1,5 @@
 <?php
-   $bot = new \LINE\LINEBot(new CurlHTTPClient('acI+Y9TOweOJVl+uPFFxr9sIOzN2A2khMx+Sz4OkSZqWCea1XDJ6fjjPh+9FihUi+VdsRSSXUqvjRsAB4C61QrCPFS09k2k0s2R9JH8vi1P5dkwP4Xrx/zkJ/EvRWCaK3OaV1gwrtkesqiYqEUmf4wdB04t89/1O/w1cDnyilFU='), ['channelSecret' => 'd1128bd2d776784a849e93ca939475ba']);
-    $accessToken = 'acI+Y9TOweOJVl+uPFFxr9sIOzN2A2khMx+Sz4OkSZqWCea1XDJ6fjjPh+9FihUi+VdsRSSXUqvjRsAB4C61QrCPFS09k2k0s2R9JH8vi1P5dkwP4Xrx/zkJ/EvRWCaK3OaV1gwrtkesqiYqEUmf4wdB04t89/1O/w1cDnyilFU=';
-    $res = $bot->getProfile('user-id');
-if ($res->isSucceeded()) {
-    $profile = $res->getJSONDecodedBody();
-    $displayName = $profile['displayName'];
-    $statusMessage = $profile['statusMessage'];
-    $pictureUrl = $profile['pictureUrl'];
-}
-    $content = file_get_contents('php://input');
+ $content = file_get_contents('php://input');
     $arrayJson = json_decode($content, true);
     $events = json_decode($content, true);
     $arrayHeader = array();
@@ -17,12 +8,12 @@ if ($res->isSucceeded()) {
     
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
-    $id = $arrayJson['events'][0]['source']['userId'];
+    $displayname = $arrayJson['events'][0]['source']['displayName'];
 #ตัวอย่าง Message Type "Text"
     if($message == "สวัสดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา\n" . $displayName;
+        $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา\n" . $displayname;
         replyMsg($arrayHeader,$arrayPostData);
     }
     else if($message == "เมนู"){
