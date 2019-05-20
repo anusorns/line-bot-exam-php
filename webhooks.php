@@ -10,7 +10,10 @@
     
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
-    $id = $arrayJson['events'][0]['source']['displayName'];
+    $id = $arrayJson['events'][0]['source']['userId'];
+curl -X GET \
+-H 'Authorization: Bearer {$accessToken}' \
+https://api.line.me/v2/bot/profile/{$id}
 #ตัวอย่าง Message Type "Text"
     if($message == "สวัสดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
