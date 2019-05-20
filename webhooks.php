@@ -1,5 +1,6 @@
 <?php
- $content = file_get_contents('php://input');
+    $access_token = 'acI+Y9TOweOJVl+uPFFxr9sIOzN2A2khMx+Sz4OkSZqWCea1XDJ6fjjPh+9FihUi+VdsRSSXUqvjRsAB4C61QrCPFS09k2k0s2R9JH8vi1P5dkwP4Xrx/zkJ/EvRWCaK3OaV1gwrtkesqiYqEUmf4wdB04t89/1O/w1cDnyilFU=';
+    $content = file_get_contents('php://input');
     $arrayJson = json_decode($content, true);
     $events = json_decode($content, true);
     $arrayHeader = array();
@@ -13,7 +14,7 @@
     if($message == "สวัสดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา\n";
+        $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา\n" . $displayname;
         replyMsg($arrayHeader,$arrayPostData);
     }
     else if($message == "เมนู"){
