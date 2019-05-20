@@ -135,10 +135,9 @@ echo "OK";
 else if($message == "ORDER"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "Flex Message";
-        
-        $arrayPostData['messages'][1]['type'] = "uri";
-        $arrayPostData['messages'][1]['label'] = "Order";
-        $arrayPostData['messages'][1]['uri'] = "https://developers.line.me";
+        $arrayPostData['messages'][0]['type'] = "uri";
+        $arrayPostData['messages'][0]['label'] = "Order";
+        $arrayPostData['messages'][0]['uri'] = "https://developers.line.me";
         replyMsg($arrayHeader,$arrayPostData);
     }
 function replyMsg($arrayHeader,$arrayPostData){
