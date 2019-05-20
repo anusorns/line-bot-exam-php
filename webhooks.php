@@ -134,8 +134,8 @@ echo "OK";
     }
 else if($message == "ORDER"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "อย่าทิ้งกันไป";
+        $arrayPostData['messages'][0]['type'] = "Flex Message";
+        
         $arrayPostData['messages'][1]['type'] = "uri";
         $arrayPostData['messages'][1]['label'] = "Order";
         $arrayPostData['messages'][1]['uri'] = "https://developers.line.me";
