@@ -134,14 +134,7 @@ echo "OK";
         $arrayPostData['messages'][1]['stickerId'] = "131";
         replyMsg($arrayHeader,$arrayPostData);
     }
-else if($message == "ORDER"){
-        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "Flex Message";
-        $arrayPostData['messages'][0]['type'] = "uri";
-        $arrayPostData['messages'][0]['label'] = "Order";
-        $arrayPostData['messages'][0]['uri'] = "https://developers.line.me";
-        replyMsg($arrayHeader,$arrayPostData);
-    }
+
 function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
         $ch = curl_init();
